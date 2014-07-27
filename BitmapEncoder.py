@@ -25,9 +25,12 @@ for i in rawimdata:
 	
 
 output = output + header + '\n'
-output = output + str(width) + ', ' + str(height) + ',\n'
+output = output + str(width) + ', ' + str(height)
 for i in range (height):
 	for j in range (output_width/8):
+		output = output + ', '
+		if j == 0:
+			output = output + '\n'
 		output = output + 'B'
 		for k in range (8):
 			if (j*8+k+1) > width:
@@ -36,9 +39,7 @@ for i in range (height):
 				output = output + '0'
 			else:
 				output = output + '1'
-		output = output + ', '
-	output = output + '\n'
-output = output + footer
+output = output + '\n' + footer
 
 
 outfile = open('output.txt', 'w')

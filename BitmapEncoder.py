@@ -34,7 +34,7 @@ for i in range (height):
 		output = output + 'B'
 		for k in range (8):
 			if (j*8+k+1) > width:
-				output = output + '1'
+				output = output + '0'
 			elif imdata[((i*width)+(j*8+k))*3]+imdata[((i*width)+(j*8+k))*3+1]+imdata[((i*width)+(j*8+k))*3+2] > 382:
 				output = output + '0'
 			else:
